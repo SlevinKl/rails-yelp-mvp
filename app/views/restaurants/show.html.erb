@@ -1,0 +1,18 @@
+<div class="container my-5">
+  <div class="row">
+    <div class="col-6 mx-auto">
+      <h1><%= @restaurant.name %></h1>
+      <div>
+        <p>Found at: <%= @restaurant.address %></p>
+        <p>Species: <%= @restaurant.phone_number %></p>
+        <p>Found on the <%= @restaurant.category %></p>
+        <% @restaurant.reviews.each do |review| %>
+          <div>
+            <li class="list-group-item"><%= review.content %> | <%= review.rating %></li>
+          </div>
+        <% end %>
+        <%= link_to "Add a review", new_restaurant_review_path(@restaurant) %>
+      </div>
+    </div>
+  </div>
+</div>
